@@ -12,7 +12,7 @@ import java.util.List;
 
 @Component
 @Repository
-public class CompletedAdminAdminCache implements AdminCache<CompletedUser> {
+public class CompletedAdminCache implements AdminCache<CompletedUser> {
 
     @Autowired
     CompletedUserRepository completed;
