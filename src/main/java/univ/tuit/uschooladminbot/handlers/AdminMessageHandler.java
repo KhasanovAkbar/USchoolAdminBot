@@ -21,9 +21,8 @@ public class AdminMessageHandler implements AdminHandler<Message> {
         String user_last_name = message.getChat().getLastName();
         long user_id = message.getChat().getId();
         String message_text = message.getText();
-        String answer = message_text;
         if (message.hasText()) {
-            log(user_first_name, user_last_name, Long.toString(user_id), message_text, answer);
+            log(user_first_name, user_last_name, Long.toString(user_id), message_text);
 
             switch (message.getText()) {
                 case "/start":
@@ -36,12 +35,11 @@ public class AdminMessageHandler implements AdminHandler<Message> {
 
     }
 
-    public static void log(String first_name, String last_name, String user_id, String txt, String bot_answer) {
+    public static void log(String first_name, String last_name, String user_id, String txt) {
         System.out.println("\n ----------------------------");
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date date = new Date();
         System.out.println(dateFormat.format(date));
         System.out.println("Message from " + first_name + " " + last_name + ". (id = " + user_id + ") \n Text - " + txt);
-        System.out.println("Bot answer: \n Text - " + bot_answer);
     }
 }
